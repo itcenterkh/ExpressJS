@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  h1 Province Entry
+  div.row
+    .col-sm-6
+      form(action='/province/add/save', method="POST")
+        .form-group
+          label(for='procode') Province Code
+          input#procode.form-control(type='text', name='procode')
+        .form-group
+          label(for='proname') Province Name
+          input#proname.form-control(type='text',name='proname')
+        .form-group
+          label(for='proname_kh') Province Name Khmer
+          input#proname_kh.form-control(type='text',name='proname_kh')
+
+        button.btn.btn-default(type='submit') Add New
+
+  br
+  br
+  div.row
+    .col-sm-12
+      table.table.table-bordered
+        thead
+          tr
+            th.text-center Province Code
+            th.text-center Name in English
+            th.text-center Name in Khmer
+            th.text-center Update
+            th.text-center Delete
+        tbody
+        for province in data
+          tr
+            td.text-center #{province.code}
+            td #{province.name_en}
+            td #{province.name_kh}
+            td.text-center
+              a.btn.btn-warning(href='/province/update/' + province.code) Update
+            td.text-center
+              a.btn.btn-danger(href='/province/delete/' + province.code) Delete
+
+  div.row
+    .col-sm-12.text-right
+      <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        </ul>

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    script(src='/javascripts/bootstrap.min.js')
+  body
+    div.container
+      nav.navbar.navbar-inverse
+        .container-fluid
+          .navbar-header
+            a.navbar-brand(href='#') Commune System
+          ul.nav.navbar-nav
+            li.active
+              a(href='/province') Province
+            li
+              a(href='/district') District
+            li
+              a(href='/commune') Commune
+            li
+              a(href='/village') Village
+            li
+              a(href='/logout') Logout
+
+      block content
+
+      br
+      nav.navbar.navbar-inverse
+        .container-fluid
+          p(style='color:#FFFFF') Hello Footer

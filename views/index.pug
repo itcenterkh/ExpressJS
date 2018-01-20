@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1 Province List
+  div.row
+    .col-sm-6
+      form(action='/action_page.php')
+        .form-group
+          label(for='email') Email address:
+          input#email.form-control(type='email')
+        .form-group
+          label(for='pwd') Password:
+          input#pwd.form-control(type='password')
+        .checkbox
+          label
+            input(type='checkbox')
+            |  Remember me
+        button.btn.btn-default(type='submit') Submit
+
+  br
+  br
+  div.row
+    .col-sm-12
+      table.table.table-bordered
+        thead
+          tr
+            th.text-center Province Code
+            th.text-center Name in English
+            th.text-center Name in Khmer
+            th.text-center Update
+            th.text-center Delete
+        tbody
+          tr
+            td.text-center John
+            td Doe
+            td john@example.com
+            td.text-center
+              a.btn.btn-warning(href='') Update
+            td.text-center
+              a.btn.btn-danger(href='') Delete
+
+  div.row
+    .col-sm-12.text-right
+      <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        </ul>

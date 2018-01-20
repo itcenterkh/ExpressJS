@@ -1,0 +1,17 @@
+- var mytest = ''
+-mytest='Hello World'
+h1=mytest
+
+
+mixin getSelected(v1, v2, text)
+  if v1==v2
+    option(value=v1,selected='selected')=text
+  else
+    option(value=v1)=text
+
+
+- var n=0;
+select
+  while n<10
+    -n++
+    +getSelected(n,7,n + 'Hello World')

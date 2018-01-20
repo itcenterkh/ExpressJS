@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Province Update
+  div.row
+    .col-sm-6
+      form(action='/province/update/save', method="POST")
+        for province in data
+          .form-group
+            label(for='procode') Province Code
+            input#procode.form-control(type='text', name='procode',value=province.code)
+          .form-group
+            label(for='proname') Province Name
+            input#proname.form-control(type='text',name='proname',value=province.name_en)
+          .form-group
+            label(for='proname_kh') Province Name Khmer
+            input#proname_kh.form-control(type='text',name='proname_kh',value=province.name_kh)
+
+          button.btn.btn-default(type='submit') Update
+    .col-sm-6
